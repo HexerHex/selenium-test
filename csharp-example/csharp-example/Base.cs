@@ -28,12 +28,27 @@ namespace csharp_example
                 return false;
             }
         }
+        public static bool IsElementPresent(IWebElement el, By locator)
+        {
+            try
+            {
+                el.FindElement(locator);
+                return true;
+            }
+            catch (NoSuchElementException ex)
+            {
+                return false;
+            }
+        }
 
         public static bool AreElementsPresent(IWebDriver driver, By locator)
         {
             return driver.FindElements(locator).Count > 0;
         }
-
+        public static bool AreElementsPresent(IWebElement el, By locator)
+        {
+            return el.FindElements(locator).Count > 0;
+        }
 
     }
 }
