@@ -35,8 +35,8 @@ namespace csharp_example
         [TearDown]
         public void stop()
         {
-            //driver.Quit();
-            //driver = null;
+            driver.Quit();
+            driver = null;
         }
     }
 }
