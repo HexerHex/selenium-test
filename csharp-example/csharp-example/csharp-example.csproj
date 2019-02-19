@@ -60,12 +60,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base.cs" />
     <Compile Include="Task1.cs" />
+    <Compile Include="Task4.cs" />
     <Compile Include="Task3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
