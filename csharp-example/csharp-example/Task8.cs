@@ -21,7 +21,7 @@ namespace csharp_example
         }
 
         [Test]
-        public void ClickMenu()
+        public void CheckStickers()
         {
             driver.Url = "http://localhost/litecart/en/";
             IList<IWebElement> storeItems = driver.FindElements(By.CssSelector("li.product"));
