@@ -23,7 +23,7 @@ namespace csharp_example
         [Test]
         public void ClickMenu()
         {
-            Login(driver);
+            driver.Url = "http://localhost/litecart/en/";
             IList<IWebElement> storeItems = driver.FindElements(By.CssSelector("li.product"));
 
             foreach (IWebElement el in storeItems)
@@ -35,8 +35,8 @@ namespace csharp_example
         [TearDown]
         public void stop()
         {
-            driver.Quit();
-            driver = null;
+            //driver.Quit();
+            //driver = null;
         }
     }
 }

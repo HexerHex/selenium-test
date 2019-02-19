@@ -16,6 +16,7 @@ namespace csharp_example
             driver.FindElement(By.Name("login")).Click();
         }
 
+
         public static bool IsElementPresent(IWebDriver driver, By locator)
         {
             try
