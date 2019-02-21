@@ -16,10 +16,6 @@ namespace csharp_example
         private IWebDriver driver;
         private WebDriverWait wait;
 
-        List<String> unsortedList = new List<String>();
-        List<String> sortedList = new List<String>();
-        List<String> zoneUrls = new List<String>();
-
         [SetUp]
         public void start()
         {
