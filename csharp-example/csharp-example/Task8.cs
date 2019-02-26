@@ -23,7 +23,7 @@ namespace csharp_example
         [Test]
         public void CheckStickers()
         {
-            driver.Url = "http://localhost/litecart/en/";
+            OpenClient(driver);
             IList<IWebElement> storeItems = driver.FindElements(By.CssSelector("li.product"));
 
             foreach (IWebElement el in storeItems)

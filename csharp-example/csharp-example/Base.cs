@@ -8,12 +8,24 @@ namespace csharp_example
 {
     public class BasicTest
     {
-        public static void Login(IWebDriver driver)
+        public static void OpenAdmin(IWebDriver driver)
         {
             driver.Url = "http://localhost/litecart/admin/login.php";
             driver.FindElement(By.Name("username")).SendKeys("admin");
             driver.FindElement(By.Name("password")).SendKeys("admin");
             driver.FindElement(By.Name("login")).Click();
+        }
+
+        public static void OpenClient(IWebDriver driver)
+        {
+            driver.Url = "http://localhost/litecart/en/";
+
+        }
+
+        public static void OpenClientRemote(IWebDriver driver)
+        {
+            driver.Url = "http://litecart.stqa.ru/en/";
+
         }
 
 

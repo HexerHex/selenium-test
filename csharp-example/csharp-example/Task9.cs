@@ -28,7 +28,7 @@ namespace csharp_example
         [Test]
         public void CheckCountries()
         {
-            Login(driver);
+            OpenAdmin(driver);
             driver.FindElement(By.XPath("//*[text()='Countries']")).Click();
 
             IList<IWebElement> Rows = driver.FindElements(By.CssSelector(".row"));
@@ -73,7 +73,7 @@ namespace csharp_example
         [Test]
         public void CheckGeo()
         {
-            Login(driver);
+            OpenAdmin(driver);
             driver.FindElement(By.XPath("//*[text()='Geo Zones']")).Click();
 
             IList<IWebElement> Rows = driver.FindElements(By.CssSelector(".row"));

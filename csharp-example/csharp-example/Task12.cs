@@ -24,7 +24,7 @@ namespace csharp_example
         [Test]
         public void AddNewProduct()
         {
-            Login(driver);
+            OpenAdmin(driver);
             driver.FindElement(By.XPath("//span[contains(.,'Catalog')]")).Click();
 
             driver.FindElement(By.XPath("//a[contains(text(),' Add New Product')]")).Click();
@@ -51,10 +51,7 @@ namespace csharp_example
 
             driver.FindElement(By.Name("keywords")).SendKeys("test, duck");
             driver.FindElement(By.Name("short_description[en]")).SendKeys("Test duck");
-
-            string descriptionText = "It's a duck";
-
-            driver.FindElement(By.CssSelector("div.trumbowyg-editor")).SendKeys(descriptionText);
+            driver.FindElement(By.CssSelector("div.trumbowyg-editor")).SendKeys("It's a duck");
 
             driver.FindElement(By.Name("head_title[en]")).SendKeys("Test Duck");
             driver.FindElement(By.Name("meta_description[en]")).SendKeys("Test Duck");

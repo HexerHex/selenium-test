@@ -27,7 +27,7 @@ namespace csharp_example
         [Test]
         public void CheckPage()
         {
-            driver.Url = "http://localhost:/litecart/en/";
+            OpenClient(driver);
 
             //Save values from main page
 
