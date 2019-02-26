@@ -63,6 +63,7 @@
     <Compile Include="Base.cs" />
     <Compile Include="Task1.cs" />
     <Compile Include="Task10.cs" />
+    <Compile Include="Task11.cs" />
     <Compile Include="Task9.cs" />
     <Compile Include="Task8.cs" />
     <Compile Include="Task7.cs" />
