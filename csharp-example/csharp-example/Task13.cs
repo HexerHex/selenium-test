@@ -54,7 +54,6 @@ namespace csharp_example
 
             for (int i = 0; i < uniqueItemsCount; i++)
             {
-                wait.Until(ExpectedConditions.ElementIsVisible(By.Id("order_confirmation-wrapper")));
                 wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//button[contains(.,'Remove')]")));
                 driver.FindElement(By.XPath("//button[contains(.,'Remove')]")).Click();
 
