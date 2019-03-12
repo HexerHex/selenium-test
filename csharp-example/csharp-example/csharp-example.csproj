@@ -62,11 +62,11 @@
   <ItemGroup>
     <Compile Include="BaseOld.cs" />
     <Compile Include="BasicTest.cs" />
-    <Compile Include="CartPage.cs" />
-    <Compile Include="Application.cs" />
-    <Compile Include="ItemPage.cs" />
-    <Compile Include="Page.cs" />
-    <Compile Include="HomePage.cs" />
+    <Compile Include="pages\CartPage.cs" />
+    <Compile Include="app\Application.cs" />
+    <Compile Include="pages\ItemPage.cs" />
+    <Compile Include="pages\Page.cs" />
+    <Compile Include="pages\HomePage.cs" />
     <Compile Include="Task1.cs" />
     <Compile Include="Task10.cs" />
     <Compile Include="Task19.cs" />
