@@ -10,7 +10,7 @@ using OpenQA.Selenium.Support.UI;
 namespace csharp_example
 {
     [TestFixture]
-    public class CartTest:BasicTest
+    public class CartTest: BaseOld
     {
         private IWebDriver driver;
         private WebDriverWait wait;
@@ -26,7 +26,8 @@ namespace csharp_example
         public void AddProductToCart()
         {
             int prodToAddCount = 3;
-            OpenClientRemote();
+
+            OpenClientRemote(driver);
 
             for (int i = 0; i < prodToAddCount; i++)
             {

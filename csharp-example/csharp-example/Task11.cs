@@ -8,7 +8,7 @@ using OpenQA.Selenium.Support.UI;
 namespace csharp_example
 {
     [TestFixture]
-    public class RegistrationTest:BasicTest
+    public class RegistrationTest: BaseOld
     {
         private IWebDriver driver;
         private WebDriverWait wait;
@@ -35,7 +35,7 @@ namespace csharp_example
             string phone = "+1 222 333 4444";
             string country = "United States";
 
-            OpenClient();
+            OpenClient(driver);
 
             driver.FindElement(By.XPath("//a[contains(., 'New customers click here')]")).Click();
 

@@ -11,7 +11,7 @@ namespace csharp_example
         [FindsBy(How = How.XPath, Using = "//a[contains(.,'Checkout »')]")]
         IWebElement checkoutBtn;
 
-        [FindsBy(How = How.CssSelector, Using = "//button[contains(.,'Remove')]")]
+        [FindsBy(How = How.XPath, Using = "//button[contains(.,'Remove')]")]
         IWebElement removeBtn;
 
         [FindsBy(How = How.CssSelector, Using = ".fa-home")]

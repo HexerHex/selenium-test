@@ -7,7 +7,7 @@ using OpenQA.Selenium.Support.UI;
 namespace csharp_example
 {
     [TestFixture]
-    public class LeftMenuTest:BasicTest
+    public class LeftMenuTest: BaseOld
     {
         private IWebDriver driver;
         private WebDriverWait wait;
@@ -22,7 +22,7 @@ namespace csharp_example
         [Test]
         public void ClickMenu()
         {
-            OpenAdmin();
+            OpenAdmin(driver);
 
             int count = driver.FindElements(By.XPath("//ul[@id='box-apps-menu']/li")).Count;
 

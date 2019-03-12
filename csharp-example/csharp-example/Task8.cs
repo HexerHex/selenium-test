@@ -8,7 +8,7 @@ using OpenQA.Selenium.Support.UI;
 namespace csharp_example
 {
     [TestFixture]
-    public class StickersTest:BasicTest
+    public class StickersTest: BaseOld
     {
         private IWebDriver driver;
         private WebDriverWait wait;
@@ -23,7 +23,7 @@ namespace csharp_example
         [Test]
         public void CheckStickers()
         {
-            OpenClient();
+            OpenClient(driver);
             IList<IWebElement> storeItems = driver.FindElements(By.CssSelector("li.product"));
 
             foreach (IWebElement el in storeItems)

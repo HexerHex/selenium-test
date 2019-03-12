@@ -9,7 +9,7 @@ using OpenQA.Selenium.Support.UI;
 namespace csharp_example
 {
     [TestFixture]
-    public class GeoTest:BasicTest
+    public class GeoTest:BaseOld
     {
         private IWebDriver driver;
         private WebDriverWait wait;
@@ -28,7 +28,7 @@ namespace csharp_example
         [Test]
         public void CheckCountries()
         {
-            OpenAdmin();
+            OpenAdmin(driver);
             driver.FindElement(By.XPath("//*[text()='Countries']")).Click();
 
             IList<IWebElement> Rows = driver.FindElements(By.CssSelector(".row"));
@@ -73,7 +73,7 @@ namespace csharp_example
         [Test]
         public void CheckGeo()
         {
-            OpenAdmin();
+            OpenAdmin(driver);
             driver.FindElement(By.XPath("//*[text()='Geo Zones']")).Click();
 
             IList<IWebElement> Rows = driver.FindElements(By.CssSelector(".row"));

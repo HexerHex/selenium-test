@@ -11,7 +11,7 @@ using OpenQA.Selenium.Support.UI;
 namespace csharp_example
 {
     [TestFixture]
-    public class PageContentTest : BasicTest
+    public class PageContentTest : BaseOld
     {
         private IWebDriver driver;
         private WebDriverWait wait;
@@ -27,7 +27,7 @@ namespace csharp_example
         [Test]
         public void CheckPage()
         {
-            OpenClient();
+            OpenClient(driver);
 
             //Save values from main page
 

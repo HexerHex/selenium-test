@@ -9,7 +9,7 @@ using OpenQA.Selenium.Support.UI;
 namespace csharp_example
 {
     [TestFixture]
-    public class NewWindow:BasicTest
+    public class NewWindow: BaseOld
     {
         private IWebDriver driver;
         private WebDriverWait wait;
@@ -24,7 +24,7 @@ namespace csharp_example
         [Test]
         public void OpenSwitchClose()
         {
-            OpenAdmin();
+            OpenAdmin(driver);
 
             driver.FindElement(By.XPath("//span[contains(.,'Countries')]")).Click();
             wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("content")));

@@ -7,11 +7,11 @@ namespace csharp_example
 {
     public class Application
     {
-        protected IWebDriver driver;
-        protected WebDriverWait wait;
-        protected HomePage Home;
-        protected ItemPage Item;
-        protected CartPage Cart;
+        public IWebDriver driver;
+        public WebDriverWait wait;
+        public HomePage Home;
+        public ItemPage Item;
+        public CartPage Cart;
 
         public Application()
         {
@@ -43,6 +43,26 @@ namespace csharp_example
         {
             Cart.Open().RemoveItemsAll();
             return this;
+        }
+
+        public Application OpenAdmin()
+        {
+            Home.OpenAdmin();
+            return this;
+        }
+
+        public Application OpenClient()
+        {
+            Home.OpenClient();
+            return this;
+
+        }
+
+        public Application OpenClientRemote()
+        {
+            Home.OpenClientRemote();
+            return this;
+
         }
 
         public void Quit()

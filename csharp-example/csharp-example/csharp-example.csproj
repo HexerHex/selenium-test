@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseOld.cs" />
     <Compile Include="BasicTest.cs" />
     <Compile Include="CartPage.cs" />
     <Compile Include="Application.cs" />

@@ -9,7 +9,7 @@ using OpenQA.Selenium.Support.UI;
 namespace csharp_example
 {
     [TestFixture]
-    public class AddProductTest:BasicTest
+    public class AddProductTest: BaseOld
     {
         private IWebDriver driver;
         private WebDriverWait wait;
@@ -24,7 +24,7 @@ namespace csharp_example
         [Test]
         public void AddNewProduct()
         {
-            OpenAdmin();
+            OpenAdmin(driver);
             driver.FindElement(By.XPath("//span[contains(.,'Catalog')]")).Click();
 
             driver.FindElement(By.XPath("//a[contains(text(),' Add New Product')]")).Click();

@@ -8,7 +8,7 @@ using OpenQA.Selenium.Support.UI;
 namespace csharp_example
 {
     [TestFixture]
-    public class LogTest:BasicTest
+    public class LogTest: BaseOld
     {
         private IWebDriver driver;
         private WebDriverWait wait;
@@ -23,7 +23,7 @@ namespace csharp_example
         [Test]
         public void CheckErrors()
         {
-            OpenAdmin();
+            OpenAdmin(driver);
 
             wait.Until(ExpectedConditions.TitleContains("My Store"));
 
