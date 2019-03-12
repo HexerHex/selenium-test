@@ -26,7 +26,7 @@ namespace csharp_example
         public void AddProductToCart()
         {
             int prodToAddCount = 3;
-            OpenClientRemote(driver);
+            OpenClientRemote();
 
             for (int i = 0; i < prodToAddCount; i++)
             {

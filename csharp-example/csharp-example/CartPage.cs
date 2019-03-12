@@ -7,6 +7,17 @@ namespace csharp_example
 {
     public class CartPage : Page
     {
+
+        [FindsBy(How = How.XPath, Using = "//a[contains(.,'Checkout »')]")]
+        IWebElement checkoutBtn;
+
+        [FindsBy(How = How.CssSelector, Using = "//button[contains(.,'Remove')]")]
+        IWebElement removeBtn;
+
+        [FindsBy(How = How.CssSelector, Using = ".fa-home")]
+        IWebElement homeBtn;
+
+
         public CartPage(IWebDriver driver) : base(driver)
         {
             PageFactory.InitElements(driver, this);
@@ -14,7 +25,7 @@ namespace csharp_example
 
         public CartPage Open()
         {
-            driver.FindElement(By.XPath("//a[contains(.,'Checkout »')]")).Click();
+            checkoutBtn.Click();
             return this;
         }
 
@@ -28,11 +39,11 @@ namespace csharp_example
             for (int i = 0; i < uniqueItemsCount; i++)
             {
                 wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//button[contains(.,'Remove')]")));
-                driver.FindElement(By.XPath("//button[contains(.,'Remove')]")).Click();
+                removeBtn.Click();
 
                 if (BasicTest.isStale(orderSummary))
                 {
-                    driver.FindElement(By.XPath("//button[contains(.,'Remove')]")).Click();
+                    removeBtn.Click();
                     orderSummary = driver.FindElement(By.Id("order_confirmation-wrapper"));
                 }
             }
@@ -41,7 +52,7 @@ namespace csharp_example
 
         public void NavigateToHome()
         {
-            driver.FindElement(By.CssSelector(".fa-home")).Click();
+            homeBtn.Click();
         }
     }
 }

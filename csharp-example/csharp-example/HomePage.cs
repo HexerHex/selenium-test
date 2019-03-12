@@ -12,7 +12,31 @@ namespace csharp_example
             PageFactory.InitElements(driver, this);
         }
 
-        public void clickFirstProduct()
+
+        public HomePage OpenAdmin()
+        {
+            driver.Url = "http://localhost/litecart/admin/login.php";
+            driver.FindElement(By.Name("username")).SendKeys("admin");
+            driver.FindElement(By.Name("password")).SendKeys("admin");
+            driver.FindElement(By.Name("login")).Click();
+            return this;
+        }
+
+        public HomePage OpenClient()
+        {
+            driver.Url = "http://localhost/litecart/en/";
+            return this;
+
+        }
+
+        public HomePage OpenClientRemote()
+        {
+            driver.Url = "http://litecart.stqa.ru/en/";
+            return this;
+
+        }
+
+        public void ClickFirstProduct()
         {
             driver.FindElement(By.CssSelector("li.product")).Click();
         }

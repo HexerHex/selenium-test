@@ -24,7 +24,7 @@ namespace csharp_example
         [Test]
         public void OpenSwitchClose()
         {
-            OpenAdmin(driver);
+            OpenAdmin();
 
             driver.FindElement(By.XPath("//span[contains(.,'Countries')]")).Click();
             wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("content")));

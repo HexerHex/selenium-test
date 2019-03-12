@@ -7,6 +7,18 @@ namespace csharp_example
 {
     public class ItemPage : Page
     {
+
+
+        [FindsBy(How = How.Name, Using = "options[Size]")]
+        IWebElement sizeSelector;
+
+        [FindsBy(How = How.CssSelector, Using = "button[name =\"add_cart_product\"]")]
+        IWebElement addToCartBtn;
+
+        [FindsBy(How = How.CssSelector, Using = ".fa-home")]
+        IWebElement homeBtn;
+
+
         public ItemPage(IWebDriver driver) : base(driver)
         {
             PageFactory.InitElements(driver, this);
@@ -14,13 +26,16 @@ namespace csharp_example
 
         public ItemPage AddToCart()
         {
-            if (BasicTest.IsElementPresent(driver, By.Name("options[Size]")))
+            try
             {
-                wait.Until(ExpectedConditions.ElementIsVisible(By.Name("options[Size]")));
-                new SelectElement(driver.FindElement(By.Name("options[Size]"))).SelectByIndex(1);
+                new SelectElement(sizeSelector).SelectByIndex(1);
+            }
+            catch (NoSuchElementException ex)
+            {
+
             }
 
-            driver.FindElement(By.Name("add_cart_product")).Click();
+            addToCartBtn.Click();
             return this;
 
         }
@@ -31,10 +46,10 @@ namespace csharp_example
             return this;
         }
 
-        public ItemPage NavigateToHome()
+        public void NavigateToHome()
         {
-            driver.FindElement(By.CssSelector(".fa-home")).Click();
-            return this;
+            homeBtn.Click();
         }
+
     }
 }

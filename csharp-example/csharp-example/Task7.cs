@@ -22,7 +22,7 @@ namespace csharp_example
         [Test]
         public void ClickMenu()
         {
-            OpenAdmin(driver);
+            OpenAdmin();
 
             int count = driver.FindElements(By.XPath("//ul[@id='box-apps-menu']/li")).Count;
 

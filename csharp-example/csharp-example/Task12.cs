@@ -24,7 +24,7 @@ namespace csharp_example
         [Test]
         public void AddNewProduct()
         {
-            OpenAdmin(driver);
+            OpenAdmin();
             driver.FindElement(By.XPath("//span[contains(.,'Catalog')]")).Click();
 
             driver.FindElement(By.XPath("//a[contains(text(),' Add New Product')]")).Click();

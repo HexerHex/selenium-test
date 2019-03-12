@@ -27,7 +27,7 @@ namespace csharp_example
         [Test]
         public void CheckPage()
         {
-            OpenClient(driver);
+            OpenClient();
 
             //Save values from main page
 

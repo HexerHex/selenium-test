@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Support.UI;
+﻿using NUnit.Framework;
+
 
 namespace csharp_example
 
@@ -16,29 +10,17 @@ namespace csharp_example
         [Test]
         public void AddProduct()
         {
-            int prodToAddCount = 3;
+            int prodsToAddCount = 3;
 
-            OpenClientRemote(driver);
-
-            for (int i = 0; i < prodToAddCount; i++)
-            {
-                Home.clickFirstProduct();
-
-                Item.AddToCart()
-                    .CountTo(i)
-                    .NavigateToHome();
-            }
-
-            Cart.Open()
-                .RemoveItemsAll();
+            App.AddToCartAndCount(prodsToAddCount);
+            App.RemoveAllCartItems();
 
         }
 
         [TearDown]
         public void stop()
         {
-            driver.Quit();
-            driver = null;
+            App.Quit();
         }
     }
 }

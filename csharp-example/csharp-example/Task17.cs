@@ -23,7 +23,7 @@ namespace csharp_example
         [Test]
         public void CheckErrors()
         {
-            OpenAdmin(driver);
+            OpenAdmin();
 
             wait.Until(ExpectedConditions.TitleContains("My Store"));
 

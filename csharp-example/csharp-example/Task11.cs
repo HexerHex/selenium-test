@@ -35,7 +35,7 @@ namespace csharp_example
             string phone = "+1 222 333 4444";
             string country = "United States";
 
-            OpenClient(driver);
+            OpenClient();
 
             driver.FindElement(By.XPath("//a[contains(., 'New customers click here')]")).Click();
 
