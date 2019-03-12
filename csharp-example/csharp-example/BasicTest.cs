@@ -8,6 +8,23 @@ namespace csharp_example
 {
     public class BasicTest
     {
+        protected IWebDriver driver;
+        protected WebDriverWait wait;
+        protected HomePage Home;
+        protected ItemPage Item;
+        protected CartPage Cart;
+
+        [SetUp]
+        public void start()
+        {
+            driver = new ChromeDriver();
+            wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+
+            Home = new HomePage(driver);
+            Item = new ItemPage(driver);
+            Cart = new CartPage(driver);
+        }
+
         public static void OpenAdmin(IWebDriver driver)
         {
             driver.Url = "http://localhost/litecart/admin/login.php";
@@ -61,6 +78,19 @@ namespace csharp_example
         public static bool AreElementsPresent(IWebElement el, By locator)
         {
             return el.FindElements(locator).Count > 0;
+        }
+
+        public static bool isStale(IWebElement el)
+        {
+            try
+            {
+                el.Click();
+                return false;
+            }
+            catch (StaleElementReferenceException ex)
+            {
+                return true;
+            }
         }
 
     }
